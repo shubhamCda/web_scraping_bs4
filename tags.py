@@ -16,10 +16,11 @@ soup = BeautifulSoup(html_doc, "html.parser") # soup is a special object which i
 # print(soup.div)    # This will return only 1st div
 # print(soup.find_all("div")[1])  #[0] For 1st div
 
-for link in soup.find_all('a'):   # To find all links with href attribute
-    # print(link['href'])
-    print(link.get_text().strip())  # Get text inside the tag without any HTML tags
+# for link in soup.find_all('a'):   # To find all links with href attribute
+#     print(link['href'])
+#     print(link.get_text().strip())  # Get text inside the tag without any HTML tags
 
-s = soup.find_all(id="link3")     # Find first element by id=
+s = soup.find(id="link3")     # Find first element by id=
 # print(len(s), s)                                # There is one element with id=link3
 # print(s.get_text())               # Get text from first occurrence (index 0)
+print(s.get("href"))
