@@ -65,5 +65,21 @@ soup = BeautifulSoup(html_doc, "html5lib")  # soup is a special object which is 
 # with open("modified.html", "w") as f:
 #     f.write(str(soup))
 
-cont = soup.find(class_="container")
-print(cont.has_attr("id"))           # Returns True or False whether tag has attribute or not
+# cont = soup.find(class_="container")
+# print(cont.has_attr("id"))           # Returns True or False whether tag has attribute or not
+
+# def has_class_but_not_id(tag):
+#     return tag.has_attr("class") and not tag.has_attr("id")
+
+# result = soup.find_all(has_class_but_not_id)
+# print(len(result), result)
+# for res in result:
+#     print(res, "\n\n")
+
+def has_content(tag):
+    return tag.has_attr("content")
+
+result = soup.find_all(has_content)
+    
+for res in result:
+    print(res, "\n\n")
